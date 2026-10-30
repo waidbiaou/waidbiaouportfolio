@@ -135,12 +135,30 @@ html[data-wf-theme=light] .moon{display:block}
 }
 @media(max-width:480px){.h-chip{font-size:.74rem;padding:8px 14px 8px 8px}.h-chip .mi{width:28px;height:28px;font-size:16px}.h-stats strong{font-size:1.45rem}}
 @media(prefers-reduced-motion:reduce){.h-curtain,.h-sheen,.h-spot,.h-halo,.h-float,.h-chip,.h-ring::before,.h-img img,.h-img::after,.h-enter,.h-rv,.h-ln>span,.h-badge b{animation:none}}
-.ar{position:relative;aspect-ratio:4/5;border-radius:999px 999px 28px 28px;overflow:hidden;border:1px solid var(--glb);background:linear-gradient(165deg,#9a2640,#2a0a12);box-shadow:0 30px 70px -30px rgba(109,26,43,.8)}
-.ar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
 /* about */
-.ab{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;position:relative}
-.ab .ar{width:min(380px,100%);margin:0 auto}
 .ab p{color:var(--mut);margin:18px 0 22px;font-size:1.05rem}
+.ab{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;position:relative}
+.ap{position:relative;width:min(440px,100%);margin:0 auto}
+.ap::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:1px solid var(--glb);border-radius:30px;background:linear-gradient(150deg,rgba(236,123,148,.16),transparent 62%)}
+.ap::after{content:"";position:absolute;left:-34px;top:-34px;width:150px;height:150px;border-radius:50%;background:radial-gradient(closest-side,var(--sp),transparent);filter:blur(6px);pointer-events:none}
+.ap-f{position:relative;z-index:1;aspect-ratio:4/5;border-radius:26px;overflow:hidden;border:1px solid var(--glb);background:linear-gradient(165deg,#9a2640,#2a0a12);box-shadow:0 36px 70px -34px rgba(109,26,43,.85)}
+.ap-f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.ap:hover .ap-f img{transform:scale(1.04)}
+.ap-f::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(13,3,6,.72)),linear-gradient(115deg,transparent 35%,rgba(255,220,230,.18) 50%,transparent 65%);background-size:100% 100%,250% 100%;background-position:0 0,150% 0;animation:shine 7s ease-in-out 1s infinite;pointer-events:none}
+.ap-tag{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 16px;border-radius:16px;background:rgba(26,8,14,.58);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4);color:#fbeef0;font-size:.84rem;font-weight:700;text-align:center;line-height:1.3}
+.ap-tag small{display:block;font-weight:500;font-size:.72rem;opacity:.75}
+.ap-tag .mi{color:#f08fa5;font-size:22px}
+.ab-t p{color:var(--mut);margin:16px 0 0;font-size:1.04rem}
+.ab-t h2{margin-bottom:6px}
+.pa{list-style:none;margin:28px 0 26px;padding:0}
+.pa li{position:relative;padding:0 0 22px 54px}
+.pa li:not(:last-child)::after{content:"";position:absolute;left:17px;top:40px;bottom:2px;width:1px;background:var(--glb)}
+.pa .n{position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--gl);border:1px solid var(--glb);font-family:'Manrope',sans-serif;font-weight:800;font-size:.85rem;color:var(--acc)}
+.pa strong{display:block;font-family:'Manrope',sans-serif;font-size:1.02rem;line-height:1.35}
+.pa .d{display:block;margin-top:2px;color:var(--mut);font-size:.92rem;line-height:1.6}
+.rvl{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.rvl.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rvl{opacity:1;transform:none;transition:none}.ap-f::after{animation:none}}
 .tl{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
 .tl span{padding:7px 15px;border-radius:999px;background:var(--gl);border:1px solid var(--glb);font-size:.85rem;font-weight:600}
 .ns{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px}
@@ -225,7 +243,11 @@ html[data-wf-theme=light] .moon{display:block}
 .lk{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;gap:4px;padding:14px;border-radius:24px;background:var(--bg2);border:1px solid var(--glb)}
 .nv.open .lk{display:flex}
 .lk a{padding:10px 12px;font-size:.95rem}
-.ab{grid-template-columns:1fr;gap:36px}
+.ab{grid-template-columns:1fr;gap:48px}
+.ap{width:min(340px,84%)}
+.ab-t{text-align:center}
+.tl,.ns{justify-content:center}
+.pa{text-align:left;max-width:460px;margin-left:auto;margin-right:auto}
 .cx{grid-template-columns:1fr}.cx>.mi{transform:rotate(90deg);justify-self:center}
 .sec{padding:72px 0}
 .fg{grid-template-columns:1fr 1fr}
@@ -265,12 +287,18 @@ html[data-wf-theme=light] .moon{display:block}
 </section>
 
 <section class="sec s1" id="expertise"><div class="w ab">
-<div class="ar"><img src="assets/img/BIGBO.png" alt="Waid Finance" loading="lazy" onerror="this.style.display='none'"></div>
-<div><span class="ch">À propos</span><h2>Waid, dit Finance.</h2>
-<p>Développeur fullstack et expert en tunnels de vente depuis 2022. J’ai accompagné plus de 50 entrepreneurs, du coaching à l’e-commerce, avec un seul objectif : transformer votre trafic en revenu réel et automatisé.</p>
-<div class="tl"><span>Systeme.io expert</span><span>ClickFunnels</span><span>Développeur fullstack</span><span>Copywriting FR</span><span>Email automation</span><span>CRO et tracking</span></div>
-<div class="ns"><div><strong>5+</strong><span>Années d’expérience</span></div><div><strong>50+</strong><span>Projets livrés</span></div><div><strong>98%</strong><span>Clients satisfaits</span></div></div>
-<a class="b bp" href="#contact">Travailler avec moi <span class="mi" aria-hidden="true">arrow_forward</span></a></div></div></section>
+<div class="ap rvl"><div class="ap-f"><img src="https://d1yei2z3i6k35z.cloudfront.net/14172262/6ae4ef1a134064.11509577_DIWAI.jpeg" alt="Waid Finance, spécialiste des tunnels de vente et des business plans" loading="lazy" onerror="this.style.display='none'"><div class="ap-tag"><span>Gestion bancaire</span><span class="mi" aria-hidden="true">east</span><span>Marketing digital</span></div></div></div>
+<div class="ab-t"><span class="ch rvl">À propos</span><h2 class="rvl" style="--d:.1s">Waid, dit Finance.</h2>
+<p class="rvl" style="--d:.15s">Je ne viens pas du marketing. Je viens de la banque. J’ai étudié la gestion bancaire et obtenu une licence en gestion des établissements financiers : analyse de rentabilité, lecture des chiffres, montage de dossiers de financement. Un univers où chaque dossier doit convaincre un décideur qui ne se contente pas de belles promesses.</p>
+<p class="rvl" style="--d:.2s">Après ma licence, je me suis tourné vers le marketing digital. J’ai compris que les réflexes qui convainquent une banque de financer un projet sont les mêmes qui poussent un prospect à acheter : un message clair, des preuves, des chiffres et un parcours sans zone d’ombre. Je me suis alors spécialisé dans la construction de tunnels de vente.</p>
+<ul class="pa rvl" style="--d:.25s">
+<li><span class="n">1</span><strong>La formation bancaire</strong><span class="d">Analyse financière, rentabilité, dossiers de financement.</span></li>
+<li><span class="n">2</span><strong>Le virage vers le marketing digital</strong><span class="d">Copywriting, psychologie d’achat, construction de tunnels de vente.</span></li>
+<li><span class="n">3</span><strong>Aujourd’hui, deux expertises</strong><span class="d">Des tunnels de vente rentables et des business plans qui tiennent devant une banque.</span></li>
+</ul>
+<div class="tl rvl" style="--d:.3s"><span>Systeme.io expert</span><span>ClickFunnels</span><span>Copywriting FR</span><span>Email automation</span><span>Business plans</span><span>Analyse financière</span></div>
+<div class="ns rvl" style="--d:.35s"><div><strong>5+</strong><span>Années d’expérience</span></div><div><strong>50+</strong><span>Projets livrés</span></div><div><strong>Licence</strong><span>Gestion bancaire</span></div></div>
+<a class="b bp rvl" style="--d:.4s" href="#contact">Travailler avec moi <span class="mi" aria-hidden="true">arrow_forward</span></a></div></div></section>
 
 <section class="sec s2"><div class="w"><div class="hd"><h2>Ce que la banque m’a enseigné</h2><p>Trois piliers fondamentaux qui transforment chaque tunnel de vente en machine de conversion.</p></div><div class="gr"><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">account_balance</span></div><h3>Rigueur bancaire</h3><p>L’exigence du secteur financier appliquée à chaque pixel de votre tunnel.</p></div><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">query_stats</span></div><h3>Analyse financière</h3><p>Des modèles de projection et des KPIs qui transforment vos données en décisions.</p></div><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">psychology</span></div><h3>Vision stratégique</h3><p>Chaque projet est pensé comme un investissement avec un ROI mesurable.</p></div></div></div></section>
 
@@ -330,6 +358,8 @@ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 if(!rm){$$('[data-n]').forEach(function(el){var t=+el.dataset.n,s0=performance.now()+1300;el.textContent='0';(function f(n){var p=Math.min(Math.max((n-s0)/1600,0),1);el.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(performance.now())})}
 var hero=$('#hero');
 if(!rm&&matchMedia('(hover:hover)').matches){var raf=0;hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){hero.style.setProperty('--mx',x.toFixed(3));hero.style.setProperty('--my',y.toFixed(3))})});hero.addEventListener('mouseleave',function(){hero.style.setProperty('--mx',0);hero.style.setProperty('--my',0)})}
+var rvl=$$('.rvl');
+if(rm||!('IntersectionObserver'in window)){rvl.forEach(function(x){x.classList.add('in')})}else{var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});rvl.forEach(function(x){io2.observe(x)})}
 })();
 </script>
 </body>
