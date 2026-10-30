@@ -199,6 +199,39 @@ html[data-wf-theme=light] .moon{display:block}
 .bk-q{margin:44px auto 0;max-width:820px;text-align:center;padding:30px 34px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
 .bk-q p{font-family:'Manrope',sans-serif;font-weight:700;font-size:1.2rem;line-height:1.55;letter-spacing:-.015em;color:var(--ink)}
 .bk-q small{display:block;margin-top:10px;color:var(--mut);font-size:.88rem}
+/* section singularité */
+.sg{overflow:hidden;background:radial-gradient(900px 520px at 85% 0,rgba(236,123,148,.22),transparent 70%),radial-gradient(800px 480px at 8% 100%,rgba(154,38,64,.5),transparent 70%),linear-gradient(135deg,#6d1a2b,#3a0b16 62%,#110408)}
+.sg-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.sg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 72% 62% at 50% 42%,#000,transparent 76%);mask-image:radial-gradient(ellipse 72% 62% at 50% 42%,#000,transparent 76%)}
+.sg-orb{position:absolute;border-radius:50%;filter:blur(54px);animation:orb 12s ease-in-out infinite alternate}
+.sg-o1{width:420px;height:420px;left:-130px;top:8%;background:rgba(196,48,80,.38)}
+.sg-o2{width:360px;height:360px;right:-110px;bottom:6%;background:rgba(240,143,165,.22);animation-delay:-5s}
+@keyframes orb{to{transform:translate(44px,-30px) scale(1.12)}}
+.sg-row{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;position:relative}
+.sg-mid{align-self:center;position:relative;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,rgba(204,56,88,.95),rgba(110,26,43,.95));border:1px solid rgba(255,190,205,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -10px 18px rgba(58,11,22,.5),0 18px 40px -8px rgba(168,40,70,.95)}
+.sg-mid::before{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(255,190,205,.65);animation:rng 3s ease-out infinite}
+@keyframes rng{from{transform:scale(1);opacity:.85}to{transform:scale(1.9);opacity:0}}
+.sg-mid .mi{font-size:32px;color:#fff;text-shadow:0 0 16px rgba(255,150,175,.9)}
+.sg-c{display:flex;flex-direction:column}
+.sg-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:24px}
+.sg-h .gi{margin-bottom:0}
+.sg-pill{display:inline-block;padding:6px 14px;border-radius:999px;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--mut)}
+.sg-now{border-color:rgba(240,143,165,.55);box-shadow:0 30px 70px -30px rgba(196,48,80,.95),inset 0 1px 0 rgba(255,255,255,.25),0 0 0 1px rgba(240,143,165,.14)}
+.sg-now .sg-pill{background:linear-gradient(135deg,#c43858,#7d2036);color:#fff;border-color:rgba(255,190,205,.5)}
+.sg-l{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:14px}
+.sg-l li{display:flex;gap:12px;align-items:flex-start;font-size:.97rem;line-height:1.55;color:var(--ink)}
+.sg-ck{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;margin-top:1px;background:linear-gradient(145deg,rgba(204,56,88,.95),rgba(110,26,43,.95));border:1px solid rgba(255,190,205,.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.sg-ck .mi{font-size:15px;color:#fff}
+.sg-lt{text-align:center;margin:60px 0 22px;font-family:'Manrope',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink)}
+.sg-lv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sg-li{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,.14);transition:transform .3s,border-color .3s}
+.sg-li:hover{transform:translateY(-4px);border-color:rgba(240,143,165,.5)}
+.sg-li strong{display:block;font-family:'Manrope',sans-serif;font-size:1.04rem;color:var(--ink)}
+.sg-li .d{display:block;margin-top:4px;color:var(--mut);font-size:.9rem;line-height:1.6}
+.gi.sm{width:52px;height:52px;border-radius:17px;margin:0;flex:none}
+.gi.sm .mi{font-size:24px}
+.gi.sm::before{inset:-10px}
+@media(prefers-reduced-motion:reduce){.sg-orb,.sg-mid::before{animation:none}}
 /* previews */
 .sb{font-size:1.4rem;margin:48px 0 20px;position:relative}
 .sb:first-of-type{margin-top:0}
@@ -274,6 +307,9 @@ html[data-wf-theme=light] .moon{display:block}
 .lk a{padding:10px 12px;font-size:.95rem}
 .ab{grid-template-columns:1fr;gap:48px}
 .ap{width:min(340px,84%)}
+.sg-row{grid-template-columns:1fr;gap:18px}
+.sg-mid{justify-self:center;width:64px;height:64px}.sg-mid .mi{transform:rotate(90deg);font-size:28px}
+.sg-lv{grid-template-columns:1fr}.sg-lt{margin-top:46px;font-size:1.15rem}
 
 .cx{grid-template-columns:1fr}.cx>.mi{transform:rotate(90deg);justify-self:center}
 .sec{padding:72px 0}
@@ -339,8 +375,22 @@ html[data-wf-theme=light] .moon{display:block}
 <div class="bk-q rvl" style="--d:.2s"><p>« La banque m’a appris à ne rien laisser au hasard. Le marketing m’a appris à parler à ceux qui achètent. Je réunis les deux. »</p><small>Abdou Waïd BIAOU</small></div>
 </div></section>
 
-<section class="sec sw"><div class="w"><div class="hd"><span class="ch">La singularité</span><h2>Et puis, le digital a tout changé.</h2><p>J’ai découvert que les mêmes leviers qui convainquent une banque de financer un projet sont ceux qui poussent un prospect à l’achat immédiat.</p></div><div class="cx"><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">account_balance</span></div><h3>La fondation bancaire</h3><ul class="ck"><li><span class="mi" aria-hidden="true">priority_high</span><span>Analyse de rentabilité et modèles de revenus</span></li><li><span class="mi" aria-hidden="true">priority_high</span><span>Psychologie des décideurs et des investisseurs</span></li><li><span class="mi" aria-hidden="true">priority_high</span><span>Exigence de présentation et structuration bancaire</span></li></ul></div><span class="mi" aria-hidden="true">east</span><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">rocket_launch</span></div><h3>La performance digitale</h3><ul class="ck"><li><span class="mi" aria-hidden="true">check</span><span>Architectures de vente à haute conversion</span></li><li><span class="mi" aria-hidden="true">check</span><span>Copywriting psychologique et persuasif</span></li><li><span class="mi" aria-hidden="true">check</span><span>Automatisation et scalabilité digitale</span></li></ul></div></div>
-<div class="qt"><p>« Mon approche n’est pas créative au sens artistique. Elle est stratégique, chiffrée et orientée résultat. »</p><small>Waid Finance Strategy</small></div></div></section>
+<section class="sec sw sg" id="singularite">
+<div class="sg-bg" aria-hidden="true"><div class="sg-grid"></div><div class="sg-orb sg-o1"></div><div class="sg-orb sg-o2"></div></div>
+<div class="w"><div class="hd rvl"><span class="ch">Ma singularité</span><h2>Et puis, le digital a tout changé.</h2><p>En passant de la banque au marketing digital, j’ai découvert une évidence : les leviers qui convainquent un banquier de financer un projet sont ceux qui poussent un prospect à acheter.</p></div>
+<div class="sg-row">
+<div class="bk-c sg-c rvl" style="--d:.1s"><div class="sg-h"><div class="gi"><span class="mi" aria-hidden="true">account_balance</span></div><span class="sg-pill">Hier</span></div><h3>La fondation bancaire</h3><p>Là où j’ai appris à rendre un dossier irréprochable.</p><ul class="sg-l"><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Analyse de rentabilité et modèles de revenus</span></li><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Compréhension de ce qui rassure un décideur ou un investisseur</span></li><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Exigence de présentation et structuration de dossier</span></li></ul></div>
+<div class="sg-mid rvl" style="--d:.2s" aria-hidden="true"><span class="mi">east</span></div>
+<div class="bk-c sg-c sg-now rvl" style="--d:.3s"><div class="sg-h"><div class="gi"><span class="mi" aria-hidden="true">rocket_launch</span></div><span class="sg-pill">Aujourd’hui</span></div><h3>La performance digitale</h3><p>Là où j’applique cette exigence pour faire vendre.</p><ul class="sg-l"><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Architectures de vente pensées pour convertir</span></li><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Copywriting psychologique qui lève les objections</span></li><li><span class="sg-ck"><span class="mi" aria-hidden="true">check</span></span><span>Automatisation e-mail et suivi précis des résultats</span></li></ul></div>
+</div>
+<h3 class="sg-lt rvl">Les mêmes leviers, deux terrains</h3>
+<div class="sg-lv">
+<div class="sg-li rvl" style="--d:.1s"><div class="gi sm"><span class="mi" aria-hidden="true">verified_user</span></div><div><strong>Des preuves</strong><span class="d">On ne promet rien sans pouvoir le démontrer : résultats, références, garanties.</span></div></div>
+<div class="sg-li rvl" style="--d:.2s"><div class="gi sm"><span class="mi" aria-hidden="true">edit_note</span></div><div><strong>Un message clair</strong><span class="d">Une offre comprise en quelques secondes, sans jargon et sans détour.</span></div></div>
+<div class="sg-li rvl" style="--d:.3s"><div class="gi sm"><span class="mi" aria-hidden="true">query_stats</span></div><div><strong>Des chiffres</strong><span class="d">Chaque décision s’appuie sur des données, jamais sur une simple intuition.</span></div></div>
+</div>
+<div class="bk-q rvl" style="--d:.2s"><p>« Mon approche n’est pas créative au sens artistique. Elle est stratégique, chiffrée et orientée résultat. »</p><small>Abdou Waïd BIAOU</small></div>
+</div></section>
 
 <section class="sec s1" id="services"><div class="w"><div class="hd"><span class="ch">Solutions stratégiques</span><h2>Deux services. Une seule obsession.</h2><p>Que chaque page construite travaille pour vous, même quand vous dormez. Pas de design futile, seulement de la conversion.</p></div><div class="gr" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))"><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">filter_alt</span></div><h3 style="font-size:1.6rem">Tunnel de vente</h3><p style="margin-top:6px;color:var(--acc);font-weight:700">Architecture de profit</p><p>Un système complet conçu pour transformer chaque visiteur en client fidèle. De la capture d’e-mail à l’upsell stratégique, tout est automatisé.</p><ul class="ck"><li><span class="mi" aria-hidden="true">check</span><span>Audit de rentabilité et stratégie</span></li><li><span class="mi" aria-hidden="true">check</span><span>Copywriting de conversion complet</span></li><li><span class="mi" aria-hidden="true">check</span><span>Configuration technique (Systeme.io, ClickFunnels)</span></li><li><span class="mi" aria-hidden="true">check</span><span>Order bump et upsell optimisés</span></li><li><span class="mi" aria-hidden="true">check</span><span>Workflow d’automatisation e-mail</span></li><li><span class="mi" aria-hidden="true">check</span><span>Suivi analytique et tracking</span></li></ul><span class="tg">Pour coachs, infopreneurs, formateurs et e-commerçants</span><div style="margin-top:22px"><a class="b bp" href="#contact">Discuter de votre projet <span class="mi" aria-hidden="true">arrow_forward</span></a></div></div><div class="cd"><div class="ic"><span class="mi" aria-hidden="true">account_balance</span></div><h3 style="font-size:1.6rem">Business Plan</h3><p style="margin-top:6px;color:var(--acc);font-weight:700">Rigueur bancaire</p><p>Convaincre un investisseur ou une banque demande une rigueur absolue. Fort de mon expérience bancaire, je structure des dossiers implacables.</p><ul class="ck"><li><span class="mi" aria-hidden="true">check</span><span>Modélisation financière sur 3 à 5 ans</span></li><li><span class="mi" aria-hidden="true">check</span><span>Étude de marché et positionnement</span></li><li><span class="mi" aria-hidden="true">check</span><span>Résumé exécutif à fort impact</span></li><li><span class="mi" aria-hidden="true">check</span><span>Dossier prêt à présenter (PDF ou impression)</span></li><li><span class="mi" aria-hidden="true">check</span><span>Accompagnement au pitch stratégique</span></li></ul><span class="tg">Pour porteurs de projet, demandes de prêt et levées de fonds</span><div style="margin-top:22px"><a class="b bp" href="#contact">Discuter de votre projet <span class="mi" aria-hidden="true">arrow_forward</span></a></div></div></div></div></section>
 
@@ -397,7 +447,7 @@ var hero=$('#hero');
 if(!rm&&matchMedia('(hover:hover)').matches){var raf=0;hero.addEventListener('mousemove',function(e){var r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){hero.style.setProperty('--mx',x.toFixed(3));hero.style.setProperty('--my',y.toFixed(3))})});hero.addEventListener('mouseleave',function(){hero.style.setProperty('--mx',0);hero.style.setProperty('--my',0)})}
 var rvl=$$('.rvl');
 if(rm||!('IntersectionObserver'in window)){rvl.forEach(function(x){x.classList.add('in')})}else{var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io2.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});rvl.forEach(function(x){io2.observe(x)})}
-$$('.bk-c').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px')})});
+$$('.bk-c,.sg-c').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--cx',(e.clientX-r.left)+'px');c.style.setProperty('--cy',(e.clientY-r.top)+'px')})});
 })();
 </script>
 </body>
